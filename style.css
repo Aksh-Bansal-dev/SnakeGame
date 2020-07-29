@@ -1,0 +1,45 @@
+:root {
+	--bg: black;
+	--snake: teal;
+	--snakeHead: green;
+	--food: yellow;
+	font-family: monospace;
+}
+* {
+	
+	padding: 0;
+	margin: 0;
+}
+body {
+	background: grey;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.score {
+	font-size: 3rem;
+	color: white;
+}
+.board {
+	background: var(--bg);
+	height: 90vmin;
+	width: 90vmin;
+	display: grid;
+	grid-template-columns: repeat(21, 1fr);
+	grid-template-rows: repeat(21, 1fr);
+	
+}
+
+.snake {
+	background: var(--snake);
+	border: 1px solid lightblue;	
+}.snakeHead {
+	background: var(--snakeHead);
+	border: 1px solid lightblue;
+}
+.food {
+	background: var(--food);
+}
