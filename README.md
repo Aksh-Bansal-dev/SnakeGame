@@ -1,6 +1,9 @@
 # SnakeGame
 The classic snake game(no fancy graphics).
 
+## Website Link
+[ https://aksh-bansal-dev.github.io/SnakeGame/]( https://aksh-bansal-dev.github.io/SnakeGame/)
+
 ## Built with
 - HTML
 - CSS
