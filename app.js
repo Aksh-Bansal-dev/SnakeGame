@@ -1,4 +1,10 @@
-const SNAKE_SPEED = 200;
+const SNAKE_SPEED_slow = 400;
+const SNAKE_SPEED_medium = 200;
+const SNAKE_SPEED_fast = 100;
+const SNAKE_SPEED_turbo = 50;
+
+var SNAKE_SPEED = SNAKE_SPEED_medium;
+
 let snakeBody = [{x:11,y:11},
 				 {x:12,y:11}
 				];
@@ -44,11 +50,16 @@ let start = false;
 
 //listen to keypress
 window.addEventListener("keydown",function(event){
+	event.preventDefault();
 	const key = event.key;
-	update(key);
-	// uncomment below to start on refresh
-	
-	(!start && key===" ")?window.requestAnimationFrame(loop):null;
+	console.log(key);
+	if(key === "1")SNAKE_SPEED = SNAKE_SPEED_slow;
+	else if(key === "2")SNAKE_SPEED = SNAKE_SPEED_medium;
+	else if(key === "3")SNAKE_SPEED = SNAKE_SPEED_fast;
+	else if(key === "4")SNAKE_SPEED = SNAKE_SPEED_turbo;
+	else if(!start && key===" ")window.requestAnimationFrame(loop);
+	else if(moves.has(key))update(key);
+	else return;
 })
 
 
@@ -73,6 +84,7 @@ let snakeLength = 2;
 
 //update board on each keypress
 function update(key){
+	//check if making illegal move
 	if(!key){
 		key = lastKey;
 	}else{
@@ -81,16 +93,19 @@ function update(key){
 		
 	}
 	lastKey = key;
+
+	//tail
 	for(let i=snakeLength-2;i>=0;i--){
 		snakeBody[i+1] = {...snakeBody[i]}
 	}
 
+	//head
 	if(key==="ArrowUp" || key=== "w"){
 		
 		if(snakeBody[0].y!==1){
 			snakeBody[0].y--;
 		}else{
-			gameover();
+			snakeBody[0].y = 21;
 		}
 	}
 	else if(key==="ArrowDown" || key === "s"){
@@ -98,7 +113,7 @@ function update(key){
 		if(snakeBody[0].y!==21){
 			snakeBody[0].y++;
 		}else{
-			gameover();
+			snakeBody[0].y = 1;
 		}
 	}
 	else if(key==="ArrowLeft" || key === "a"){
@@ -106,7 +121,7 @@ function update(key){
 		if(snakeBody[0].x!==1){
 			snakeBody[0].x--;
 		}else{
-			gameover();
+			snakeBody[0].x = 21;
 		}
 	}
 	else if(key==="ArrowRight" || key === "d"){
@@ -114,7 +129,7 @@ function update(key){
 		if(snakeBody[0].x!==21){
 			snakeBody[0].x++;
 		}else{
-			gameover();
+			snakeBody[0].x = 1;
 		}
 	}
 }
