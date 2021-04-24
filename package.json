@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "compile": "tsc",
-    "dev": "tsc && electron .",
+    "dev": "npm run compile && electron-forge start",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
