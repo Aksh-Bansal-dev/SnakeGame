@@ -1,0 +1,26 @@
+{
+  "name": "snakegame",
+  "version": "1.0.0",
+  "description": "The classic snake game(no fancy graphics).",
+  "main": "main.js",
+  "scripts": {
+    "compile": "tsc",
+    "start": "npm run compile && electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aksh-Bansal-dev/SnakeGame.git"
+  },
+  "author": "Aksh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aksh-Bansal-dev/SnakeGame/issues"
+  },
+  "homepage": "https://github.com/Aksh-Bansal-dev/SnakeGame#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "electron": "^12.0.5",
+    "typescript": "^4.2.4"
+  }
+}
