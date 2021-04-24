@@ -4,6 +4,7 @@
         "module": "commonjs",    
         "strict": true,          
         "esModuleInterop": true,    
+        "lib":["es6"]
     }
 }
         // "outDir": "./build"
