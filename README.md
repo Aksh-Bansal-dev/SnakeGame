@@ -23,6 +23,4 @@ The classic snake game(no fancy graphics).
   - normal(default)
   - fast(fun)
   - turbo(only for pros)
-- no walls on border 
- 
 
